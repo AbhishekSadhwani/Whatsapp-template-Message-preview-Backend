@@ -2,8 +2,6 @@
 
 ## 1. Get All Templates
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
 ### Endpoint:
 
 ```bash
