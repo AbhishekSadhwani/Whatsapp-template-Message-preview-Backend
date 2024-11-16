@@ -1,14 +1,15 @@
-let templates = [
+export const templates = [
   {
     id: 1,
     name: 'Order Confirmation',
-    template: 'Hello, {{name}}! Your order #{{orderNumber}} has been confirmed for ₹{{price}}. We will deliver it to {{address}}. Track your order here: {{trackingLink}}',
+    template: `Hello, {{Name}}!
+
+              Your order #{{OrderNumber}} is confirmed for Rs.{{Amount}}. 
+              We'll deliver it to {{DeliveryAddress}}.`,
   },
   {
     id: 2,
     name: 'Shipping Notification',
-    template: 'Hi {{name}}, your order is on the way! Track it here: {{trackingLink}}'
+    template: 'Hi {{Name}}, Your order #{{OrderNumber}} is on the way!'
   }
 ];
-
-export default templates;

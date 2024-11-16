@@ -1,26 +1,13 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import { templates } from './data/templates.js';
 
 const app = express();
+
 app.use(cors());
 app.use(bodyParser.json());
 
-let templates = [
-  {
-    id: 1,
-    name: 'Order Confirmation',
-    template: `Hello, {{Name}}!
-
-              Your order #{{OrderNumber}} is confirmed for Rs.{{Amount}}. 
-              We'll deliver it to {{DeliveryAddress}}.`,
-  },
-  {
-    id: 2,
-    name: 'Shipping Notification',
-    template: 'Hi {{Name}}, Your order #{{OrderNumber}} is on the way!'
-  }
-];
 
 // Endpoint to get all templates
 app.get('/api/templates', (req, res) => {
@@ -31,8 +18,10 @@ app.get('/api/templates', (req, res) => {
 app.post('/api/preview', (req, res) => {
   const { templateId, variables } = req.body;
   const template = templates.find(t => t.id === templateId);
-  if (!template) return res.status(404).send('Template not found');
-
+  
+  if (!template) {
+    return res.status(404).send('Template not found');
+  }
 
   let preview = template.template;
   for (let [key, value] of Object.entries(variables)) {
