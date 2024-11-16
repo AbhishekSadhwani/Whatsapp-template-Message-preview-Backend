@@ -16,7 +16,7 @@ Retrieve all available WhatsApp templates.
 
 ### Response
 
-```bash
+```json
 [
   {
     "id": 1,
@@ -43,23 +43,26 @@ Generate a preview of the template with the provided dynamic variables.
 
 ### Request Body:
 
-```bash
+```json
 {
   "templateId": 1,
   "variables": {
     "name": "Abhi",
     "orderNumber": "12345",
     "amount": "1500",
-    "deliveryAddress": "Jaipur, Rajasthan",
+    "deliveryAddress": "Jaipur, Rajasthan"
   }
 }
 ```
 
 ### Response
 
-```bash
+```json
 {
-  "preview": "Hello, Abhi! Your order #12345 is confirmed for Rs.1500. We'll deliver it to Jaipur, Rajasthan.
+  "preview": "Hello, Abhi!
+
+              Your order #12345 is confirmed for Rs.1500.
+              We'll deliver it to Jaipur, Rajasthan."
 }
 ```
 
@@ -67,12 +70,12 @@ Generate a preview of the template with the provided dynamic variables.
 
 - 400: Missing or invalid input (e.g., missing variables or templateId).
 
-```bash
+```json
 { "error": "Template ID is required" }
 ```
 
 - 404: Template not found.
 
-```bash
+```json
 { "error": "Template not found" }
 ```
