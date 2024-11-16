@@ -21,10 +21,7 @@ Retrieve all available WhatsApp templates.
   {
     "id": 1,
     "name": "Order Confirmation",
-    "template": "Hello, {{Name}}!
-
-              Your order #{{OrderNumber}} is confirmed for Rs.{{Amount}}.
-              We'll deliver it to {{DeliveryAddress}}."
+    "template": "Hello, {{Name}}! Your order #{{OrderNumber}} is confirmed for Rs.{{Amount}}. We'll deliver it to {{DeliveryAddress}}."
   }
 ]
 ```
@@ -59,10 +56,7 @@ Generate a preview of the template with the provided dynamic variables.
 
 ```json
 {
-  "preview": "Hello, Abhi!
-
-              Your order #12345 is confirmed for Rs.1500.
-              We'll deliver it to Jaipur, Rajasthan."
+  "preview": "Hello, Abhi! Your order #12345 is confirmed for Rs.1500.We'll deliver it to Jaipur, Rajasthan."
 }
 ```
 
