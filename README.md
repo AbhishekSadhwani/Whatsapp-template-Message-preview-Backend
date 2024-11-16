@@ -16,12 +16,15 @@ Retrieve all available WhatsApp templates.
 
 ### Response
 
-```python
+```bash
 [
   {
     "id": 1,
     "name": "Order Confirmation",
-    "template": "Hello, {{name}}! Your order #{{orderNumber}} is confirmed for Rs.{{amount}}. We'll deliver it to {{deliveryAddress}}.
+    "template": "Hello, {{Name}}!
+
+              Your order #{{OrderNumber}} is confirmed for Rs.{{Amount}}.
+              We'll deliver it to {{DeliveryAddress}}."
   }
 ]
 ```
